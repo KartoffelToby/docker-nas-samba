@@ -1,1 +1,0 @@
-docker run -it --name nas -p 445:455 -p 137:137 -p 138:138 -p 139:139 -v /etc/localtime:/etc/localtime:ro -v /etc/timezone:/etc/timezone:ro --hostname=HOSTNAME -e USER=test -e PASSWORD=test -v /home/toha/Dokumente/:/home/test nasdemo
