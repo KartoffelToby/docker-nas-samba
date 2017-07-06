@@ -1,8 +1,8 @@
-FROM debian:jessie
+FROM debian:stretch
 MAINTAINER Tobias Haber <kontakt@t-haber.de>
 ENV DEBIAN_FRONTEND noninteractive
 
-RUN echo "deb http://ftp.de.debian.org/debian jessie main" > /etc/apt/sources.list
+RUN echo "deb http://ftp.de.debian.org/debian stretch main" > /etc/apt/sources.list
 
 RUN apt-get update && apt-get upgrade -y
 
