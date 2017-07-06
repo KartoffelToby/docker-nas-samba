@@ -10,16 +10,15 @@ then
   adduser --quiet --gecos "First Last,RoomNumber,WorkPhone,HomePhone" --disabled-login --shell /bin/false --home /home/$user/ $user -q
   echo $pass $user
   echo -e "$pass\n$pass" | smbpasswd -s -a $user
-  mkdir /home/$user
+  mkdir -p /home/$user
  done
  pass="nopublic"
  user="publicuser"
  adduser --quiet --gecos "First Last,RoomNumber,WorkPhone,HomePhone" --disabled-login --shell /bin/false --home /home/$user/ $user -q
  echo $pass $user
  echo -e "$pass\n$pass" | smbpasswd -s -a $user
- mkdir /home/$user
- /etc/init.d/samba start
- tail -f /var/log/dmesg
+ mkdir -p /home/$user
+ /usr/sbin/smbd -F
 else
  pass="$PASSWORD"
  user="$USER"
@@ -27,6 +26,5 @@ else
  echo $pass $user
  echo -e "$pass\n$pass" | smbpasswd -s -a $user
  mkdir /home/$user
- /etc/init.d/samba start
- tail -f /var/log/dmesg
+ /usr/sbin/smbd -F
 fi
