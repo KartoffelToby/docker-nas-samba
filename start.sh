@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [ -n "$USER" ]
+if [ -z "$USER" ]
 then
  cat /conf/multiuser.conf | while read LINE
  do
