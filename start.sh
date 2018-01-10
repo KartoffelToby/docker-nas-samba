@@ -15,7 +15,7 @@ then
   mkdir -p /home/$user
  done
 /etc/init.d/samba start
-tail -f /var/log/dmesg
+tail -f /var/log/smb.log
 else
  pass="$PASSWORD"
  user="$USER"
