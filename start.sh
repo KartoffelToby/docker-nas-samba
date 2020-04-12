@@ -23,6 +23,6 @@ else
  echo $pass $user
  echo -e "$pass\n$pass" | smbpasswd -s -a $user
  mkdir -p /home/$user
- /etc/init.d/samba start
+ service samba start
  tail -f /var/log/smb.log
 fi
